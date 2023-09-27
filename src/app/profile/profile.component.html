@@ -1,0 +1,82 @@
+<div class="profile_main">
+    <div class="profile_image">
+        <img [src]=userProfile.coverImage alt="Image">
+        <div class="profile_edit">
+            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/33dit.png" alt="Edit">
+        </div>
+    </div>
+    <div class="profile_detail_main">
+        <div class="profile_circle">
+            <img [src]=userProfile.profileImage alt="Circle">
+            <div class="play_btn">
+                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/CompositeLayer1234r.png" alt="Play">
+            </div>
+        </div>
+        <div class="text_fields_main">
+            <div>
+                <!-- Details -->
+                <div class="profile_heading_one">
+                    <h1>{{userProfile.name}}
+                    </h1>
+                    <h2>
+                        {{userProfile.city}}, {{userProfile.state}}, {{userProfile.country}} •
+                        {{userProfile.occupation}}
+                    </h2>
+                    <h3>
+                        Looking for:
+                        <ng-container *ngFor="let item of userProfile.lookingFor; let last = last">
+                            <span>{{ item }}</span>
+                            <ng-container *ngIf="!last">, </ng-container>
+                        </ng-container>
+                    </h3>
+
+                    <p>{{userProfile.description}}
+                    </p>
+                    <!-- Buttons -->
+                    <div class="profile_btn_main">
+                        <button (click)="addToProfile()" class="add_profile_btn">Add to Profile</button>
+                        <button (click)="editProfile()" class="edit_profile_btn">Edit Profile
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/pen123.png" alt="Pen">
+                        </button>
+                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/1234-0.png" alt="Dots">
+                    </div>
+                    <!-- Buttons -->
+                </div>
+                <!-- Details Ends Here -->
+                <div class="actions_names">
+                    <a href="javascript:void(0)" class="actions_names_profile">Profile</a>
+                    <a href="javascript:void(0)" class="actions_names_posts">Posts</a>
+                    <a href="javascript:void(0)" class="actions_names_posts">Portfolio</a>
+                    <a href="javascript:void(0)" class="actions_names_posts">Events</a>
+                    <a href="javascript:void(0)" class="actions_names_posts">Gallery</a>
+                    <a href="javascript:void(0)" class="actions_names_posts">Saved</a>
+                </div>
+            </div>
+            <div>
+                <div class="convocation_main">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/mortarboard123.png" alt="Convocation">
+                    <p class="convocation_study">Studied at <span class="convocation">{{userProfile.studied}}</span>
+                    </p>
+                </div>
+                <div class="convocation_main">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/gY0hq3.png" alt="Convocation">
+                    <p class="convocation_study">{{userProfile.score}}
+                    </p>
+                </div>
+                <div class="convocation_main">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/123%3D12.png" alt="Convocation">
+                    <ng-container *ngFor="let item of userProfile.certificates; let last = last">
+                        <p class="convocation_study">{{ item }}</p>
+                        <ng-container class="convocation_study" *ngIf="!last">|</ng-container>
+                    </ng-container>
+                </div>
+                <div class="convocation_main">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/GvP21w.png" alt="Convocation">
+                    <p class="convocation_study">Participate in Tech Talk by <span
+                            class="convocation">{{userProfile.activities}} </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container d-flex justify-content-center align-items-center vh-50">
+  <div class="card shadow">
+    <div class="card-body">
+      <h5 class="card-title text-center mb-4">User Form</h5>
+      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <!-- Username Field -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" id="username" name="username" ngModel required class="form-control">
+          <div
+            *ngIf="userForm.controls['username']?.invalid && (userForm.controls['username']?.dirty || userForm.controls['username']?.touched)"
+            class="text-danger mt-2">
+            <div *ngIf="userForm.controls['username']?.hasError('required')">Username is required</div>
+          </div>
+        </div>
+
+        <!-- Description Field -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description:</label>
+          <textarea id="description" name="description" ngModel class="form-control"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

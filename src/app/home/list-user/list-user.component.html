@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>Dynamic List</h3>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let data of userData">
+            <div class="d-flex justify-content-between">
+                UserName: <span>{{ data.username }}</span>
+                <span class="badge badge-primary">Badge</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <small class="text-muted">Description:</small> <span class="text-muted">{{ data.description }}</span>
+                <span class="badge badge-primary">Badge</span>
+            </div>
+        </li>
+    </ul>
+</div>
